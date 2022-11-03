@@ -12,9 +12,9 @@ exports.config = {
     project: "First Webdriverio iOS Project",
     build: 'Webdriverio iOS',
     name: 'single_test',
-    device: 'iPhone 11 Pro',
-    os_version: "13",
-    app: process.env.BROWSERSTACK_APP_ID || 'bs://<hashed app-id>',
+    device: 'iPhone 13',
+    os_version: "15",
+    app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
     'browserstack.debug': true
   }],
 

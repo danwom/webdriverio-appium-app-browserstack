@@ -9,14 +9,15 @@ exports.config = {
   exclude: [],
 
   capabilities: [{
-    project: "First Webdriverio Android Project",
-    build: 'Webdriverio Android',
-    name: 'first_test',
-    device: 'Google Pixel 3',
-    os_version: "9.0",
-    app: process.env.BROWSERSTACK_APP_ID || 'bs://<hashed app-id>',
+    project: "First Webdriverio iOS Project",
+    build: 'Webdriverio iOS',
+    name: 'single_test',
+    device: 'iPhone 11 Pro',
+    os_version: "13",
+    app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
     'browserstack.debug': true
   }],
+
 
   logLevel: 'info',
   coloredLogs: true,
