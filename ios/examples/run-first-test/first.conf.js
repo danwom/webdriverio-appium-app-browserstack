@@ -15,7 +15,8 @@ exports.config = {
     device: 'iPhone 13',
     os_version: "15",
     app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
-    'browserstack.debug': true
+    'browserstack.debug': true,
+    'browserstack.appium_version': "1.18.0"
   }],
 
   logLevel: 'info',
