@@ -13,7 +13,7 @@ exports.config = {
     build: 'Webdriverio iOS',
     name: 'single_test',
     device: 'iPhone 13',
-    os_version: "15",
+    os_version: "15.5",
     app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
     'browserstack.debug': true,
     'browserstack.appium_version': "1.21.0"

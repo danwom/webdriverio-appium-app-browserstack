@@ -25,48 +25,63 @@ describe('Browserstack App', () => {
     let el6 = await $("~username-input");
     await el6.click();
 
+    await browser.pause(3000);
+    await browser.touchAction({
+      action: 'tap',
+      x: 200,
+      y: 775,
+    });
 
-    let el66 = await $("//XCUIElementTypePicker[1]/XCUIElementTypePickerWheel[1]");
-    await el66.sendKeys(["demouser"]);
+    await browser.pause(3000);
+    await browser.touchAction({
+      action: 'tap',
+      x: 350,
+      y: 605
+    });
 
-
-    let el7 = await $("~done_button");
-    await el7.click();
-
-
+    await browser.pause(3000);
     let el77 = await $("~password-input");
+    await el77.click();
 
-    let el71 = await $("//XCUIElementTypePicker[@name=\"ios_picker\"]/XCUIElementTypePickerWheel");
-    await el71.sendKeys(["testingisfun99"]);
+    await browser.pause(3000);
+    await browser.touchAction({
+      action: 'tap',
+      x: 200,
+      y: 775
+    });
 
-    let el8 = await $("done_button");
-    await el8.click();
+    await browser.pause(3000);
 
+    await browser.touchAction({
+      action: 'tap',
+      x: 350,
+      y: 605
+    });
 
-    let el9 = await $("login-btn");
+    let el9 = await $("~login-btn");
     await el9.click();
-    let el10 = await $("firstNameInput");
-    await el10.click();
-    await el10.sendKeys("Daniel");
-    let el11 = await $("lastNameInput");
-    await el11.click();
-    await el11.sendKeys("Test");
-    let el12 = await $("addressInput");
-    await el12.click();
-    await el12.sendKeys("123 Street st");
-    await el12.click();
-    let el13 = await $("stateInput");
-    await el13.sendKeys("CA");
-    await el13.click();
-    let el14 = await $("postalCodeInput");
-    await el14.sendKeys("94103");
+
+    let el10 = await $("~firstNameInput");
+    await el10.setValue("Daniel");
+
+    let el11 = await $("~lastNameInput");
+    await el11.setValue("Test");
+
+    let el12 = await $("~addressInput");
+    await el12.setValue("123 Street st");
+
+    let el13 = await $("~stateInput");
+    await el13.setValue("CA");
+
+    let el14 = await $("~postalCodeInput");
+    await el14.setValue("94103");
     await browser.touchAction({
       action: 'tap',
       x: 200,
       y: 90
     });
         
-    let el15 = await $("submit-btn");
+    let el15 = await $("~submit-btn");
     await el15.click();
     assert(true);
   });
