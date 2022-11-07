@@ -16,7 +16,7 @@ exports.config = {
     os_version: "15",
     app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
     'browserstack.debug': true,
-    'browserstack.appium_version': "1.18.0"
+    'browserstack.appium_version': "1.21.0"
   }],
 
   logLevel: 'info',
@@ -30,6 +30,6 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    timeout: 40000
+    timeout: 60000
   }
 };
