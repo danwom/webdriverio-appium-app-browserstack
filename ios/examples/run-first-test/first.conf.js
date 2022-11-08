@@ -1,3 +1,12 @@
+userName = process.env.BROWSERSTACK_USERNAME
+accessKey = process.env.BROWSERSTACK_ACCESS_KEY
+browserstackLocal = process.env.BROWSERSTACK_LOCAL
+buildName = process.env.BROWSERSTACK_BUILD_NAME;
+browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
+app = process.env.BROWSERSTACK_APP_ID
+
+
+
 exports.config = {
   user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
   key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
@@ -9,26 +18,29 @@ exports.config = {
   exclude: [],
 
   capabilities: [{
-    project: "First Webdriverio iOS Project",
-    build: 'Webdriverio iOS',
-    name: 'single_test',
-    device: 'iPhone 11 Pro',
-    os_version: "13",
-    app: process.env.BROWSERSTACK_APP_ID || 'bs://<hashed app-id>',
-    'browserstack.debug': true
+    app,
+    build: buildName,
+    project: "Jenkins Auto Test",
+    name: 'first_test',
+    device: 'iPhone 13',
+    os_version: "15.5",
+    'browserstack.debug': true,
+    'browserstack.appium_version': "1.21.0",
+    "browserstack.local" : browserstackLocal,
+    "browserstack.localIdentifier" : browserstackLocalIdentifier
   }],
 
   logLevel: 'info',
   coloredLogs: true,
   screenshotPath: './errorShots/',
   baseUrl: '',
-  waitforTimeout: 10000,
+  waitforTimeout: 15000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
 
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    timeout: 40000
+    timeout: 60000
   }
 };

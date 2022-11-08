@@ -13,16 +13,20 @@ exports.config = {
     project: "First Webdriverio iOS Project",
     build: 'Webdriverio iOS Parallel',
     name: 'parallel_test',
-    app: process.env.BROWSERSTACK_APP_ID || 'bs://<hashed app-id>',
-    'browserstack.debug': true
+    app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
+    'browserstack.debug': true,
+    'browserstack.appium_version': "1.21.0"
   },
 
   capabilities: [{
     device: "iPhone 11 Pro",
     os_version: "13"
   }, {
-    device: "iPhone 11 Pro Max",
-    os_version: "13"
+    device: "iPhone 12",
+    os_version: "14"
+  }, {
+    device: "iPhone 13 ",
+    os_version: "15"
   }],
 
   logLevel: 'info',
