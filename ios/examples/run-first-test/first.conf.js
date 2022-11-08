@@ -1,3 +1,12 @@
+userName = process.env.BROWSERSTACK_USERNAME
+accessKey = process.env.BROWSERSTACK_ACCESS_KEY
+browserstackLocal = process.env.BROWSERSTACK_LOCAL
+buildName = process.env.BROWSERSTACK_BUILD_NAME;
+browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
+app = process.env.BROWSERSTACK_APP_ID
+
+
+
 exports.config = {
   user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
   key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
@@ -9,14 +18,16 @@ exports.config = {
   exclude: [],
 
   capabilities: [{
-    project: "First Webdriverio iOS Project",
-    build: 'Webdriverio iOS',
-    name: 'single_test',
+    app,
+    build: buildName,
+    project: "Jenkins Auto Test",
+    name: 'first_test',
     device: 'iPhone 13',
     os_version: "15.5",
-    app: "bs://a9ab60611cae615c8b42bad9123297afa17343e7",
     'browserstack.debug': true,
-    'browserstack.appium_version': "1.21.0"
+    'browserstack.appium_version': "1.21.0",
+    "browserstack.local" : browserstackLocal,
+    "browserstack.localIdentifier" : browserstackLocalIdentifier
   }],
 
   logLevel: 'info',
